@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lifepoints/SplashScreen.dart';
 
 void main() {
   runApp(MyApp());
@@ -21,8 +22,10 @@ class MyApp extends StatelessWidget {
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
         primarySwatch: Colors.blue,
+        primaryColor: Color(0xFF000002),
+        scaffoldBackgroundColor: Color(0xFF000002)
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: SplashScreen(),
     );
   }
 }
