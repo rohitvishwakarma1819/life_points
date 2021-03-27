@@ -24,7 +24,8 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
         primaryColor: Utilities.darkBlue,
-        scaffoldBackgroundColor: Utilities.darkBlue
+        scaffoldBackgroundColor: Utilities.darkBlue,
+        fontFamily: 'Museo',
       ),
       home: SplashScreen(),
     );

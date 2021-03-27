@@ -11,6 +11,7 @@ class LifePointMainLogo extends StatelessWidget {
           border: Border.all(color: Utilities.purple,width: 2),
           shape: BoxShape.circle,
           image: DecorationImage(
+            scale: 1.5,
             image: AssetImage("images/life_points_logo.png")
           )
         ),

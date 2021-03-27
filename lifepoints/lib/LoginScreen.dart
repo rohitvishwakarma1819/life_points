@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lifepoints/Utilities.dart';
 import 'LifePointsMainLogo.dart';
@@ -15,7 +16,7 @@ class _LoginScreenState extends State<LoginScreen> {
         // padding: EdgeInsets,
         margin: EdgeInsets.all(40),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisSize: MainAxisSize.max,
           children: [
@@ -66,25 +67,43 @@ class _LoginScreenState extends State<LoginScreen> {
                     color: Utilities.white,
                   )),
             ),
+            SizedBox(height:15 ,),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                TextButton(
-                    onPressed: () {},
+                GestureDetector(
+                    onTap: () {},
                     child: Text(
                       "Forgot password ?",
                       style: TextStyle(color: Utilities.white),
                     ))
               ],
             ),
+            Spacer(),
+
+
             Container(
-              color: ,
-              margin: EdgeInsets.only(left: 10,right: 10),
-              child: ElevatedButton(
-                  child: Text("LOG IN", style: TextStyle(color: Utilities.white),),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(30)),
+                gradient: LinearGradient(
+                    colors: [new Color(0xff5098F2),new Color(0xff0F68D7)])
               ),
-            )
+              child: MaterialButton(
+                onPressed: (){},minWidth: double.infinity,
+                // shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10))),
+
+                child: Text("Log In",style: TextStyle(color: Colors.white),),
+              ),
+            ),
+           SizedBox(height: 10,),
+           MaterialButton(onPressed: (){},
+             child: Text("Don't have an account? Create one",style: TextStyle(color: Utilities.white,),),
+           )
+
+
+
+
           ],
         ),
       ),
