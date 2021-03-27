@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lifepoints/LifePointsMainLogo.dart';
-import 'package:lifepoints/LoginScreen.dart';
+import 'package:lifepoints/Screens/LoginScreen.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
