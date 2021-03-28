@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lifepoints/LifePointsMainLogo.dart';
+import 'package:lifepoints/Screens/HomeScreen.dart';
 import 'package:lifepoints/Screens/LoginScreen.dart';
 import 'package:lifepoints/Utilities.dart';
 class OTPVerificationScreen extends StatefulWidget {
@@ -81,7 +82,7 @@ class _OTPVerificationScreenState extends State<OTPVerificationScreen> {
                     ])),
                 child: MaterialButton(
                   onPressed: () {
-
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()));
                   },
                   minWidth: double.infinity,
                   // shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10))),

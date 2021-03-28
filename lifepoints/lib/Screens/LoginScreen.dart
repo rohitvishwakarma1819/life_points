@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lifepoints/Screens/CreateAccountScreen.dart';
 import 'package:lifepoints/Screens/ForgotPasswordScreen.dart';
+import 'package:lifepoints/Screens/HomeScreen.dart';
 import 'package:lifepoints/Utilities.dart';
 import '../LifePointsMainLogo.dart';
 
@@ -50,7 +51,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     colors: [new Color(0xff5098F2),new Color(0xff0F68D7)])
               ),
               child: MaterialButton(
-                onPressed: (){},minWidth: double.infinity,
+                onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()));
+                },minWidth: double.infinity,
                 // shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10))),
 
                 child: Text("LOG IN",style: TextStyle(color: Colors.white),),
