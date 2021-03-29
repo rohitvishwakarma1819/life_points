@@ -11,6 +11,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  int _bottomNavigationIndex = 0;
   List adImageList = [
     "images/man.png",
     "images/photo-of-woman-leaning.png",
@@ -130,14 +131,19 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: 0,
-        items:  <BottomNavigationBarItem>[
-         homeBottomNavigationBarItem(Icons.home, Colors.grey),
-          homeBottomNavigationBarItem(Icons.home, Colors.grey),
-          homeBottomNavigationBarItem(Icons.home, Colors.grey),
-          homeBottomNavigationBarItem(Icons.home, Colors.grey),
-
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+        onTap: (newIndex) => setState(() => _bottomNavigationIndex = newIndex),
+        type: BottomNavigationBarType.fixed,
+        items: <BottomNavigationBarItem>[
+          homeBottomNavigationBarItem(Icons.dashboard_outlined,
+              _bottomNavigationIndex == 0 ? Utilities.accentPink : Colors.grey),
+          homeBottomNavigationBarItem(Icons.qr_code_scanner_outlined,
+              _bottomNavigationIndex == 1 ? Utilities.accentPink : Colors.grey),
+          homeBottomNavigationBarItem(Icons.rounded_corner,
+              _bottomNavigationIndex == 2 ? Utilities.accentPink : Colors.grey),
+          homeBottomNavigationBarItem(Icons.shopping_cart_outlined,
+              _bottomNavigationIndex == 3 ? Utilities.accentPink : Colors.grey),
         ],
-        backgroundColor: Colors.green,
       ),
     );
   }
@@ -147,6 +153,15 @@ class _HomeScreenState extends State<HomeScreen> {
           String imageURI = "images/man.png",
           String description = "Lorem Ipsum is simply dummy text of the"}) =>
       Container(
+        padding: EdgeInsets.all(5),
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [new Color(0xffFFEA57), Colors.black]
+            ),
+            color: Colors.blue,
+              border: Border.all(width: 1),
+              borderRadius: BorderRadius.all(Radius.circular(27)),
+          ),
           width: MediaQuery.of(context).size.width,
           margin: EdgeInsets.symmetric(horizontal: 5.0),
           child: Column(
@@ -209,7 +224,15 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ],
           ));
-  BottomNavigationBarItem homeBottomNavigationBarItem(IconData itemIcon,Color itemColor){
-    return BottomNavigationBarItem(icon: Icon(itemIcon, color: itemColor,size: 20,),label: "" );
+
+  BottomNavigationBarItem homeBottomNavigationBarItem(
+      IconData itemIcon, Color itemColor) {
+    return BottomNavigationBarItem(
+        icon: Icon(
+          itemIcon,
+          color: itemColor,
+          size: 25,
+        ),
+        label: "");
   }
 }
